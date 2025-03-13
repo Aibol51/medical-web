@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Hello i18n",
+  "usingComponents": {
+    "uv-skeleton": "../../uni_modules/uv-skeleton/components/uv-skeleton/uv-skeleton",
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card",
+    "nav-bar": "../../components/navBar",
+    "status-bar": "../../components/statusBar"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "uv-loading-icon": "../../../uni_modules/uv-loading-icon/components/uv-loading-icon/uv-loading-icon"
+  }
+}

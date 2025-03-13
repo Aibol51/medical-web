@@ -1,0 +1,229 @@
+{
+	"locale.auto": "系统",
+	"locale.en": "English",
+	"locale.zh-hans": "简体中文",
+	"locale.kk": "Қазақ",
+	"locale.ru": "Русский",
+	"locale.ja": "日语",
+	"index.title": "Kang Ren Tang",
+	"index.home": "主页",
+	"index.component": "组件",
+	"index.api": "API",
+	"index.schema": "Schema",
+	"index.demo": "uni-app 国际化演示",
+	"index.demo-description": "包含 uni-framework、manifest.json、pages.json、tabbar、页面、组件、API、Schema",
+	"index.detail": "详情",
+	"index.language": "语言",
+	"index.language-info": "语言信息",
+	"index.system-language": "系统语言",
+	"index.application-language": "应用语言",
+	"index.language-change-confirm": "Применение этого настройки перезапустит приложение",
+	"api.message": "提示",
+	"schema.name": "姓名",
+	"schema.add": "新增",
+	"schema.add-success": "新增成功",
+	"home.booking": "Запись",
+	"home.medicine": "Продукции",
+	"home.video": "Видео",
+	"home.news": "Новости",
+	"home.question": "Вопрос",
+	"home.hello": "Здравствуйте",
+	"home.loading": "Загрузка",
+	"home.doctorList": "Специалисты",
+	"home.service": "Услуги",
+	"home.viewAll": "Смотреть все",
+
+
+
+	"unauthorized.message": "Нет авторизации, пожалуйста, войдите снова",
+	"login.prompt": "Пожалуйста, войдите",
+	"login.login": "Войти",
+	"login.register": "Регистрация",
+	"login.phone.number": "Номер телефона",
+	"login.phone.input": "Пожалуйста, введите номер телефона",
+	"login.password": "Пароль",
+	"login.password.input": "Пожалуйста, введите пароль",
+	"login.verification.code": "Код подтверждения",
+	"login.verification.input": "Введите код подтверждения",
+	"login.phone.length.error": "Номер телефона должен быть длиной 10 символов",
+	"login.password.length.error": "Пароль должен быть от 6 до 16 символов",
+	"login.verification.error": "Пожалуйста, введите правильный код подтверждения",
+	"login.login.success": "Вход выполнен успешно",
+	"login.login.error": "Номер телефона, пароль или код подтверждения введены неверно",
+
+	"register.username": "Имя пользователя",
+	"register.username.input": "Введите имя пользователя",
+	"register.confirmPassword": "Подтвердите пароль",
+	"register.sendCode": "Отправить код подтверждения",
+	"register.register": "Зарегистрироваться",
+	"register.passwordMismatch": "Пароли не совпадают",
+	"register.success": "Регистрация прошла успешно!",
+	"register.codeError": "Ошибка кода подтверждения",
+	"register.codeSent": "Код успешно отправлен",
+
+	"uni.picker.cancel": "Отмена",
+	"uni.picker.done": "Готово",
+	"uni.showModal.cancel": "Отмена",
+	"uni.showModal.confirm": "Подтвердить",
+
+
+	"appointment.booking": "Запись на прием", // 预约
+	"appointment.noRecord": "Нет записей на прием", // 无预约记录
+	"appointment.bookNow": "Записаться сейчас", // 马上预约
+	"appointment.name": "Имя", // 姓名
+	"appointment.phone": "Номер телефона", // 手机号
+	"appointment.gender": "Пол", // 性别
+	"appointment.selectGender": "Пожалуйста, выберите пол", // 请选择性别
+	"appointment.male": "Мужчина", // 男
+	"appointment.female": "Женщина", // 女
+	"appointment.idCard": "Идентификационная карта", // 身份证
+	"appointment.age": "Возраст", // 年龄
+	"appointment.dateTime": "Время приема", // 预约时间
+	"appointment.selectDateTime": "Пожалуйста, выберите время", // 请选择时间
+	"appointment.symptoms": "Описание симптомов", // 症状描述
+	"appointment.remarks": "Примечания", // 备注信息
+	"appointment.submit": "Отправить", // 提交
+	"appointment.pending": "Ожидает подтверждения", // 待确认
+	"appointment.confirmed": "Подтверждено", // 已确认
+	"appointment.completed": "Завершено", // 已完成
+	"appointment.canceled": "Отменено", // 已取消
+	"appointment.expired": "Истекло", // 已过期
+	"appointment.fillName": "Пожалуйста, введите имя", // 请填写姓名
+	"appointment.correctPhone": "Пожалуйста, введите правильный номер телефона", // 请填写正确手机号码
+	"appointment.selectGenderOption": "Пожалуйста, выберите Мужчина или Женщина", // 请选择男或女
+	"appointment.fillAge": "Пожалуйста, введите возраст", // 请填写年龄
+	"appointment.selectDateTimeOption": "Пожалуйста, выберите время приема", // 请选择预约时间
+	"appointment.validationPassed": "Проверка пройдена", // 校验通过
+	"appointment.success": "Запись прошла успешно!", // 预约成功！
+	"appointment.validationFailed": "Проверка не пройдена", // 校验失败
+	"appointment.status": "Статус",
+	"appointment.year": "лет",
+	"appointment.noData": "Нет данных",
+	"appointment.cancelAppointment": "Отменить запись",
+	"appointment.appointmentDetails": "Детали записи",
+	"appointment.appointmentCancelled": "Запись отменена",
+
+	"appointment.notRegister": "Номер телефона не зарегистрирован. Пожалуйста, введите пароль для регистрации.",
+	"appointment.registerFail": "Ошибка регистрации.",
+	"appointment.loginFail": "Ошибка входа.",
+	"appointment.codeSendSuccess": "Код подтверждения отправлен.",
+	"appointment.codeSendFail": "Не удалось отправить код подтверждения.",
+
+	"user.logOut": "Выйти",
+	"user.logOutSuccess": "Выход выполнен успешно!", // 登出成功!
+	"user.editPassword": "Изменить пароль",
+	"user.editPasswordSuccess": "Пароль успешно изменён",
+	"user.nickName": "Имя",
+	"user.enterNickName": "Пожалуйста, введите имя",
+	"user.confirm": "Подтвердить",
+	"user.editSuccess": "Изменение успешно",
+	"user.profileCenter": "Личный кабинет",
+	"user.profileSettings": "Настройки профиля",
+	"user.healthReport": "Отчет о здоровье",
+	"user.editInformation": "Изменение данных",
+	"user.nickNameLengthError": "Длина псевдонима должна быть от 2 до 20 символов.",
+
+	"user.passwordStrength": "Надежность пароля",
+	"user.passwordWeak": "Слабый",
+	"user.passwordMedium": "Средний",
+	"user.passwordStrong": "Сильный",
+	"user.passwordVeryStrong": "Очень сильный",
+
+	"news.featured": "Избранное",
+	"news.empty": "Новостей нет",
+	"news.refresh": "Обновить",
+	"news.refreshSuccess": "Успешно обновлено",
+	"news.refreshFailed": "Не удалось обновить",
+	"news.loadmore": "Загрузить еще",
+	"news.loading": "Загрузка...",
+	"news.nomore": "Больше нет данных",
+	"news.justNow": "Только что",
+	"news.minutesAgo": "минут назад",
+	"news.hoursAgo": "часов назад",
+	"news.yesterday": "Вчера",
+	"news.daysAgo": "дней назад",
+	"news.detail": "Детали новости",
+
+
+	"report.empty": "Нет медицинских записей",
+	"report.male": "Мужской",
+	"report.female": "Женский",
+	"report.age": "лет",
+	"report.visitTime": "Время посещения",
+	"report.idCard": "Удостоверение личности",
+	"report.phone": "Номер телефона",
+	"report.name": "Имя пациента",
+	"report.gender_label": "Пол",
+	"report.complaintTitle": "Жалобы",
+	"report.none": "Нет",
+	"report.diagnosisTitle": "Диагноз",
+	"report.presentIllnessTitle": "Текущее заболевание",
+	"report.pastHistoryTitle": "История болезни",
+	"report.normal": "Нормальный",
+	"report.attention": "Требует внимания",
+	"report.viewDetail": "Нажмите для просмотра",
+	"report.popupTitle": "Детали медицинской записи",
+	"report.basicInfo": "Основная информация",
+	"report.illnessInfo": "Информация о болезни",
+	"report.vitalSigns": "Показатели жизнедеятельности",
+	"report.diagnosisTreatment": "Диагноз и лечение",
+	"report.doctorAdvice": "Рекомендации врача",
+	"report.smoking": "Курение",
+	"report.drinking": "Употребление алкоголя",
+	"report.allergy": "Аллергия",
+	"report.yes": "Да",
+	"report.no": "Нет",
+	"report.unknown": "Неизвестно",
+	"report.heartRate": "Пульс",
+	"report.heartRateUnit": "уд/мин",
+	"report.bloodPressure": "Артериальное давление",
+	"report.bloodPressureUnit": "мм рт.ст.",
+	"report.oxygenSaturation": "Сатурация кислорода",
+	"report.oxygenSaturationUnit": "%",
+	"report.bloodGlucose": "Уровень глюкозы",
+	"report.bloodGlucoseUnit": "ммоль/л",
+	"report.weight": "Вес",
+	"report.weightUnit": "кг",
+	"report.waistCircumference": "Окружность талии",
+	"report.waistCircumferenceUnit": "см",
+	"report.bodyFat": "Процент жира",
+	"report.bodyFatUnit": "%",
+	"report.treatmentPlan": "План лечения",
+	"report.dietTherapy": "Диетотерапия",
+	"report.exerciseTherapy": "Физиотерапия",
+	"report.medicationTherapy": "Медикаментозная терапия",
+	"report.recommended": "Рекомендуется",
+	"report.optional": "Опционально",
+	"report.notRecommended": "Не рекомендуется",
+	"report.remarks": "Примечания",
+	"report.print": "Печать записи",
+	"report.share": "Поделиться записью",
+	"report.updatedTime": "Время обновления",
+	"report.recordId": "Номер записи",
+
+
+	"report.habit.0": "Нет",
+	"report.habit.1": "Да",
+	"report.habit.2": "Умеренно",
+	"report.habit.3": "Часто",
+	"report.habit.4": "Бросил(а)",
+
+	"report.diet.1": "Легкая диета",
+	"report.diet.2": "Меньше острой пищи",
+	"report.diet.3": "Меньше мяса",
+	"report.diet.4": "Низкое содержание соли",
+	"report.diet.5": "Низкое содержание жира",
+	"report.diet.6": "Низкое содержание сахара",
+	"report.diet.7": "Меньше зерновых",
+
+
+	"report.exercise.1": "Упражнения низкой интенсивности",
+	"report.exercise.2": "Упражнения средней интенсивности",
+
+	"report.medication.1": "Китайский травяной чай",
+	"report.medication.2": "Китайские патентованные лекарства",
+	"report.medication.3": "Китайские травы",
+	"report.medication.4": "Западная медицина",
+
+	"report.diagnosis": "Диагноз"
+}

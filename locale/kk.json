@@ -1,0 +1,230 @@
+{
+	"locale.auto": "系统",
+	"locale.en": "English",
+	"locale.zh-hans": "简体中文",
+	"locale.kk": "Қазақ",
+	"locale.ru": "Русский",
+	"locale.ja": "日语",
+	"index.title": "Kang Ren Tang",
+	"index.home": "主页",
+	"index.component": "组件",
+	"index.api": "API",
+	"index.schema": "Schema",
+	"index.demo": "uni-app 国际化演示",
+	"index.demo-description": "包含 uni-framework、manifest.json、pages.json、tabbar、页面、组件、API、Schema",
+	"index.detail": "详情",
+	"index.language": "语言",
+	"index.language-info": "语言信息",
+	"index.system-language": "系统语言",
+	"index.application-language": "应用语言",
+	"index.language-change-confirm": "Бұл параметрді қолдану қолданбаны қайта іске қосады",
+	"api.message": "提示",
+	"schema.name": "姓名",
+	"schema.add": "新增",
+	"schema.add-success": "新增成功",
+	"home.booking": "Тіркелу",
+	"home.medicine": "Өнімдер",
+	"home.video": "Бейне",
+	"home.news": "Жаңалықтар",
+	"home.question": "Сұрақ",
+	"home.hello": "Сәлем",
+	"home.loading": "Жүктелуде",
+	"home.doctorList": "Мамандар",
+	"home.service": "Қызыметтер",
+	"home.viewAll": "Барлығын көру",
+
+
+
+	"unauthorized.message": "Рұқсат жоқ, қайта кіріңіз",
+	"login.prompt": "Кіруді сұраймыз",
+	"login.login": "Кіру",
+	"login.register": "Тіркелу",
+	"login.phone.number": "Телефон нөмірі",
+	"login.phone.input": "Телефон нөмірін енгізіңіз",
+	"login.password": "Құпия сөз",
+	"login.password.input": "Құпия сөзді енгізіңіз",
+	"login.verification.code": "Тексеру коды",
+	"login.verification.input": "Тексеру кодын енгізіңіз",
+	"login.phone.length.error": "Телефон нөмірі 10 таңбадан тұруы керек",
+	"login.password.length.error": "Құпия сөз ұзындығы 6 пен 16 таңба арасында болуы керек",
+	"login.verification.error": "Дұрыс тексеру кодын енгізіңіз",
+	"login.login.success": "Кіру сәтті аяқталды",
+	"login.login.error": "Телефон нөмірі, құпия сөз немесе тексеру коды қате",
+
+	"register.username": "Пайдаланушы аты",
+	"register.username.input": "Пайдаланушы атын енгізіңіз",
+	"register.confirmPassword": "Құпиясөзді растаңыз",
+	"register.sendCode": "Растау кодын жіберу",
+	"register.register": "Тіркелу",
+	"register.passwordMismatch": "Құпиясөздер сәйкес келмейді",
+	"register.success": "Тіркелу сәтті өтті!",
+	"register.codeError": "Растау коды қате",
+	"register.codeSent": "Код сәтті жіберілді",
+
+	"uni.picker.cancel": "Бас тарту",
+	"uni.picker.done": "Дайын",
+	"uni.showModal.cancel": "Бас тарту",
+	"uni.showModal.confirm": "Растау",
+
+	"appointment.booking": "Қабылдауға жазылу", // 预约
+	"appointment.noRecord": "Қабылдау жазбалары жоқ", // 无预约记录
+	"appointment.bookNow": "Қазір жазылу", // 马上预约
+	"appointment.name": "Аты", // 姓名
+	"appointment.phone": "Телефон нөмірі", // 手机号
+	"appointment.gender": "Жыныс", // 性别
+	"appointment.selectGender": "Жынысты таңдаңыз", // 请选择性别
+	"appointment.male": "Ер", // 男
+	"appointment.female": "Әйел", // 女
+	"appointment.idCard": "Жеке куәлік", // 身份证
+	"appointment.age": "Жас", // 年龄
+	"appointment.dateTime": "Қабылдау уақыты", // 预约时间
+	"appointment.selectDateTime": "Уақытты таңдаңыз", // 请选择时间
+	"appointment.symptoms": "Симптомдарды сипаттау", // 症状描述
+	"appointment.remarks": "Ескертулер", // 备注信息
+	"appointment.submit": "Жіберу", // 提交
+	"appointment.pending": "Расталуды күтуде", // 待确认
+	"appointment.confirmed": "Расталды", // 已确认
+	"appointment.completed": "Аяқталды", // 已完成
+	"appointment.canceled": "Болдырылмады", // 已取消
+	"appointment.expired": "Мерзімі өтті", // 已过期
+	"appointment.fillName": "Атыңызды енгізіңіз", // 请填写姓名
+	"appointment.correctPhone": "Дұрыс телефон нөмірін енгізіңіз", // 请填写正确手机号码
+	"appointment.selectGenderOption": "Ер немесе Әйелді таңдаңыз", // 请选择男或女
+	"appointment.fillAge": "Жасыңызды енгізіңіз", // 请填写年龄
+	"appointment.selectDateTimeOption": "Қабылдау уақытын таңдаңыз", // 请选择预约时间
+	"appointment.validationPassed": "Тексеру сәтті өтті", // 校验通过
+	"appointment.success": "Сәтті жазылды!", // 预约成功！
+	"appointment.validationFailed": "Тексеру сәтсіз аяқталды", // 校验失败
+	"appointment.status": "Статус",
+	"appointment.year": "Жас",
+	"appointment.noData": "Деректер жоқ",
+	"appointment.cancelAppointment": "Жазылуды болдырмау",
+	"appointment.appointmentDetails": "Жазылу туралы мәліметтер",
+	"appointment.appointmentCancelled": "Жазылу жойылды",
+
+	"appointment.notRegister": "Телефон нөмірі тіркелмеген. Тіркелу үшін құпиясөзді енгізіңіз.",
+	"appointment.registerFail": "Тіркелу сәтсіз аяқталды.",
+	"appointment.loginFail": "Кіру сәтсіз аяқталды.",
+	"appointment.codeSendSuccess": "Растау коды жіберілді.",
+	"appointment.codeSendFail": "Растау кодын жіберу сәтсіз аяқталды.",
+
+	"user.logOut": "Шығу",
+	"user.logOutSuccess": "Шығу сәтті аяқталды!", // 登出成功!
+	"user.editPassword": "Құпия сөзді өзгерту",
+	"user.editPasswordSuccess": "Құпия сөз сәтті өзгертілді",
+	"user.nickName": "Аты",
+	"user.enterNickName": "Атты енгізіңіз",
+	"user.confirm": "Растау",
+	"user.editSuccess": "Сәтті өзгертілді",
+	"user.profileCenter": "Жеке кабинет",
+	"user.profileSettings": "Жеке баптаулар",
+	"user.healthReport": "Денсаулық туралы есеп",
+	"user.editInformation": "Деректерді өңдеу",
+	"user.nickNameLengthError": "Аты жөн ұзындығы 2-20 таңба болуы керек",
+
+	"user.passwordStrength": "Құпия сөз күші",
+	"user.passwordWeak": "Әлсіз",
+	"user.passwordMedium": "Орташа",
+	"user.passwordStrong": "Күшті",
+	"user.passwordVeryStrong": "Өте күшті",
+
+	"news.featured": "Ерекше",
+	"news.empty": "Жаңалықтар жоқ",
+	"news.refresh": "Жаңарту",
+	"news.refreshSuccess": "Сәтті жаңартылды",
+	"news.refreshFailed": "Жаңарту сәтсіз аяқталды",
+	"news.loadmore": "Көбірек жүктеу",
+	"news.loading": "Жүктелуде...",
+	"news.nomore": "Қосымша деректер жоқ",
+	"news.justNow": "Дәл қазір",
+	"news.minutesAgo": "минут бұрын",
+	"news.hoursAgo": "сағат бұрын",
+	"news.yesterday": "Кеше",
+	"news.daysAgo": "күн бұрын",
+	"news.detail": "Жаңалықтар егжей-тегжейі",
+
+
+	"report.empty": "Медициналық жазбалар жоқ",
+	"report.male": "Ер",
+	"report.female": "Әйел",
+	"report.age": "жас",
+	"report.visitTime": "Қаралу уақыты",
+	"report.idCard": "Жеке куәлік",
+	"report.phone": "Телефон нөмірі",
+	"report.name": "Науқастың аты",
+	"report.gender_label": "Жынысы",
+	"report.complaintTitle": "Негізгі шағым",
+	"report.none": "Жоқ",
+	"report.diagnosisTitle": "Диагноз",
+	"report.presentIllnessTitle": "Ағымдағы ауру",
+	"report.pastHistoryTitle": "Ауру тарихы",
+	"report.normal": "Қалыпты",
+	"report.attention": "Назар аударуды қажет етеді",
+	"report.viewDetail": "Толық көру үшін басыңыз",
+	"report.popupTitle": "Медициналық жазба деректері",
+	"report.basicInfo": "Негізгі ақпарат",
+	"report.illnessInfo": "Ауру туралы ақпарат",
+	"report.vitalSigns": "Өмірлік көрсеткіштер",
+	"report.diagnosisTreatment": "Диагноз және емдеу",
+	"report.doctorAdvice": "Дәрігер ұсыныстары",
+	"report.smoking": "Темекі шегу",
+	"report.drinking": "Алкоголь қолдану",
+	"report.allergy": "Аллергия",
+	"report.yes": "Иә",
+	"report.no": "Жоқ",
+	"report.unknown": "Белгісіз",
+	"report.heartRate": "Жүрек соғу жиілігі",
+	"report.heartRateUnit": "соғу/мин",
+	"report.bloodPressure": "Қан қысымы",
+	"report.bloodPressureUnit": "мм сын. бағ.",
+	"report.oxygenSaturation": "Оттегі сатурациясы",
+	"report.oxygenSaturationUnit": "%",
+	"report.bloodGlucose": "Қан құрамындағы глюкоза",
+	"report.bloodGlucoseUnit": "ммоль/л",
+	"report.weight": "Салмағы",
+	"report.weightUnit": "кг",
+	"report.waistCircumference": "Бел өлшемі",
+	"report.waistCircumferenceUnit": "см",
+	"report.bodyFat": "Дене майы",
+	"report.bodyFatUnit": "%",
+	"report.treatmentPlan": "Емдеу жоспары",
+	"report.dietTherapy": "Диеталық емдеу",
+	"report.exerciseTherapy": "Физикалық емдеу",
+	"report.medicationTherapy": "Дәрі-дәрмекпен емдеу",
+	"report.recommended": "Ұсынылады",
+	"report.optional": "Қосымша",
+	"report.notRecommended": "Ұсынылмайды",
+	"report.remarks": "Ескертулер",
+	"report.print": "Жазбаны басып шығару",
+	"report.share": "Жазбамен бөлісу",
+	"report.updatedTime": "Жаңарту уақыты",
+	"report.recordId": "Жазба нөмірі",
+
+
+
+	"report.habit.0": "Жоқ",
+	"report.habit.1": "Иә",
+	"report.habit.2": "Орташа",
+	"report.habit.3": "Көп",
+	"report.habit.4": "Тастаған",
+
+
+	"report.diet.1": "Жеңіл тамақтану",
+	"report.diet.2": "Аз дәмді тағам",
+	"report.diet.3": "Аз ет",
+	"report.diet.4": "Аз тұзды",
+	"report.diet.5": "Аз майлы",
+	"report.diet.6": "Аз қантты",
+	"report.diet.7": "Аз дәнді",
+
+
+	"report.exercise.1": "Төмен қарқынды жаттығулар",
+	"report.exercise.2": "Орташа қарқынды жаттығулар",
+
+	"report.medication.1": "Қытай шөп шайы",
+	"report.medication.2": "Қытай дәстүрлі дәрілері",
+	"report.medication.3": "Қытай шөптері",
+	"report.medication.4": "Батыс медицинасы",
+
+	"report.diagnosis": "Диагноз"
+}

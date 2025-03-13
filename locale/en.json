@@ -1,0 +1,226 @@
+{
+	"locale.auto": "System",
+	"locale.en": "English",
+	"locale.zh-hans": "简体中文",
+	"locale.kk": "Қазақ",
+	"locale.ru": "Русский",
+	"locale.ja": "日语",
+	"index.title": "Kang Ren Tang",
+	"index.home": "Home",
+	"index.component": "Component",
+	"index.api": "API",
+	"index.schema": "Schema",
+	"index.demo": "uni-app globalization",
+	"index.demo-description": "Include uni-framework, manifest.json, pages.json, tabbar, Page, Component, API, Schema",
+	"index.detail": "Detail",
+	"index.language": "Language",
+	"index.language-info": "Settings",
+	"index.system-language": "System language",
+	"index.application-language": "Application language",
+	"index.language-change-confirm": "Applying this setting will restart the app",
+	"api.message": "Message",
+	"schema.name": "Name",
+	"schema.add": "Add",
+	"schema.add-success": "Add success",
+	"home.booking": "Booking",
+	"home.medicine": "Medicine",
+	"home.video": "Video",
+	"home.news": "News",
+	"home.question": "Question",
+	"home.hello": "Hello",
+	"home.loading": "Loading",
+	"home.doctorList": "Expert",
+	"home.service": "Service",
+	"home.viewAll": "View All",
+
+
+
+	"unauthorized.message": "Unauthorized, please log in again",
+	"login.prompt": "Please log in",
+	"login.login": "Login",
+	"login.register": "Register",
+	"login.phone.number": "Phone Number",
+	"login.phone.input": "Please enter your phone number",
+	"login.password": "Password",
+	"login.password.input": "Please enter your password",
+	"login.verification.code": "Verification Code",
+	"login.verification.input": "Please enter the verification code",
+	"login.phone.length.error": "The phone number must be 10 characters long",
+	"login.password.length.error": "The password must be between {minLength} and {maxLength} characters",
+	"login.verification.error": "Please enter the correct verification code",
+	"login.login.success": "Login successful",
+	"login.login.error": "Phone number, password, or verification code is incorrect",
+
+	"register.username": "Username",
+	"register.username.input": "Please enter your username",
+	"register.confirmPassword": "Confirm Password",
+	"register.sendCode": "Send Verification Code",
+	"register.register": "Register",
+	"register.passwordMismatch": "Passwords do not match",
+	"register.success": "Registration successful!",
+	"register.codeError": "Verification code error",
+	"register.codeSent": "Code sent successfully",
+
+	"uni.picker.cancel": "Cancel",
+	"uni.picker.done": "Done",
+	"uni.showModal.cancel": "Cancel",
+	"uni.showModal.confirm": "Confirm",
+
+	"appointment.booking": "Booking Appointment", // 预约
+	"appointment.noRecord": "No appointment records", // 无预约记录
+	"appointment.bookNow": "Book Now", // 马上预约
+	"appointment.name": "Name", // 姓名
+	"appointment.phone": "Phone Number", // 手机号
+	"appointment.gender": "Gender", // 性别
+	"appointment.selectGender": "Please select gender", // 请选择性别
+	"appointment.male": "Male", // 男
+	"appointment.female": "Female", // 女
+	"appointment.idCard": "ID Card", // 身份证
+	"appointment.age": "Age", // 年龄
+	"appointment.dateTime": "Appointment Time", // 预约时间
+	"appointment.selectDateTime": "Please select time", // 请选择时间
+	"appointment.symptoms": "Symptoms Description", // 症状描述
+	"appointment.remarks": "Remarks", // 备注信息
+	"appointment.submit": "Submit", // 提交
+	"appointment.pending": "Pending Confirmation", // 待确认
+	"appointment.confirmed": "Confirmed", // 已确认
+	"appointment.completed": "Completed", // 已完成
+	"appointment.canceled": "Canceled", // 已取消
+	"appointment.expired": "Expired", // 已过期
+	"appointment.fillName": "Please fill in your name", // 请填写姓名
+	"appointment.correctPhone": "Please enter a valid phone number", // 请填写正确手机号码
+	"appointment.selectGenderOption": "Please select Male or Female", // 请选择男或女
+	"appointment.fillAge": "Please fill in your age", // 请填写年龄
+	"appointment.selectDateTimeOption": "Please select an appointment time", // 请选择预约时间
+	"appointment.validationPassed": "Validation Passed", // 校验通过
+	"appointment.success": "Appointment Successful!", // 预约成功！
+	"appointment.validationFailed": "Validation Failed", // 校验失败
+	"appointment.status": "Status",
+	"appointment.year": "Age",
+	"appointment.noData": "No data",
+	"appointment.cancelAppointment": "Cancel Appointment",
+	"appointment.appointmentDetails": "Appointment Details",
+	"appointment.appointmentCancelled": "Appointment Cancelled",
+
+	"appointment.notRegister": "The phone number is not registered. Please enter a password to register.",
+	"appointment.registerFail": "Registration failed.",
+	"appointment.loginFail": "Login failed.",
+	"appointment.codeSendSuccess": "Verification code has been sent.",
+	"appointment.codeSendFail": "Failed to send verification code.",
+
+	"user.logOut": "Log out",
+	"user.logOutSuccess": "Log out successful!", // 登出成功!
+	"user.editPassword": "Edit Password",
+	"user.editPasswordSuccess": "Password successfully changed",
+	"user.nickName": "Nickname",
+	"user.enterNickName": "Please enter a nickname",
+	"user.confirm": "Confirm",
+	"user.editSuccess": "Successfully modified",
+	"user.profileCenter": "Personal Center",
+	"user.profileSettings": "Personal Settings",
+	"user.healthReport": "Health Report",
+	"user.editInformation": "Edit Information",
+	"user.nickNameLengthError": "Nickname should be 2-20 characters",
+
+	"user.passwordStrength": "Password Strength",
+	"user.passwordWeak": "Weak",
+	"user.passwordMedium": "Medium",
+	"user.passwordStrong": "Strong",
+	"user.passwordVeryStrong": "Very Strong",
+
+	"news.featured": "Featured",
+	"news.empty": "No news available",
+	"news.refresh": "Refresh",
+	"news.refreshSuccess": "Refreshed successfully",
+	"news.refreshFailed": "Refresh failed",
+	"news.loadmore": "Load more",
+	"news.loading": "Loading...",
+	"news.nomore": "No more data",
+	"news.justNow": "Just now",
+	"news.minutesAgo": "minutes ago",
+	"news.hoursAgo": "hours ago",
+	"news.yesterday": "Yesterday",
+	"news.daysAgo": "days ago",
+	"news.detail": "News Detail",
+
+	"report.empty": "No medical records",
+	"report.male": "Male",
+	"report.female": "Female",
+	"report.age": "years old",
+	"report.visitTime": "Visit time",
+	"report.idCard": "ID card",
+	"report.phone": "Phone number",
+	"report.name": "Patient name",
+	"report.gender_label": "Gender",
+	"report.complaintTitle": "Chief complaint",
+	"report.none": "None",
+	"report.diagnosisTitle": "Diagnosis",
+	"report.presentIllnessTitle": "Present illness",
+	"report.pastHistoryTitle": "Past medical history",
+	"report.normal": "Normal",
+	"report.attention": "Attention needed",
+	"report.viewDetail": "Tap to view details",
+	"report.popupTitle": "Medical Record Details",
+	"report.basicInfo": "Basic Information",
+	"report.illnessInfo": "Illness Information",
+	"report.vitalSigns": "Vital Signs",
+	"report.diagnosisTreatment": "Diagnosis & Treatment",
+	"report.doctorAdvice": "Doctor's Advice",
+	"report.smoking": "Smoking history",
+	"report.drinking": "Drinking history",
+	"report.allergy": "Allergy history",
+	"report.yes": "Yes",
+	"report.no": "No",
+	"report.unknown": "Unknown",
+	"report.heartRate": "Heart rate",
+	"report.heartRateUnit": "bpm",
+	"report.bloodPressure": "Blood pressure",
+	"report.bloodPressureUnit": "mmHg",
+	"report.oxygenSaturation": "Oxygen saturation",
+	"report.oxygenSaturationUnit": "%",
+	"report.bloodGlucose": "Blood glucose",
+	"report.bloodGlucoseUnit": "mmol/L",
+	"report.weight": "Weight",
+	"report.weightUnit": "kg",
+	"report.waistCircumference": "Waist circumference",
+	"report.waistCircumferenceUnit": "cm",
+	"report.bodyFat": "Body fat",
+	"report.bodyFatUnit": "%",
+	"report.treatmentPlan": "Treatment plan",
+	"report.dietTherapy": "Diet therapy",
+	"report.exerciseTherapy": "Exercise therapy",
+	"report.medicationTherapy": "Medication therapy",
+	"report.recommended": "Recommended",
+	"report.optional": "Optional",
+	"report.notRecommended": "Not recommended",
+	"report.remarks": "Remarks",
+	"report.print": "Print record",
+	"report.share": "Share record",
+	"report.updatedTime": "Updated time",
+	"report.recordId": "Record ID",
+
+
+	"report.habit.0": "None",
+	"report.habit.1": "Yes",
+	"report.habit.2": "Moderate",
+	"report.habit.3": "Heavy",
+	"report.habit.4": "Quit",
+
+	"report.diet.1": "Light diet",
+	"report.diet.2": "Less spicy food",
+	"report.diet.3": "Less meat",
+	"report.diet.4": "Low salt",
+	"report.diet.5": "Low fat",
+	"report.diet.6": "Low sugar",
+	"report.diet.7": "Less grain",
+
+	"report.exercise.1": "Low-intensity exercise",
+	"report.exercise.2": "Medium-intensity exercise",
+
+	"report.medication.1": "Chinese herbal tea",
+	"report.medication.2": "Chinese patent medicine",
+	"report.medication.3": "Chinese herbs",
+	"report.medication.4": "Western medicine",
+
+	"report.diagnosis": "Diagnosis"
+}

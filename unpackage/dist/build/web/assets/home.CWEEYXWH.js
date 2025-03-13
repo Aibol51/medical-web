@@ -1,0 +1,1 @@
+import{r as s}from"./request.BIpDWIEA.js";function t(t){return s.post("/mms-api/swiper/list",t,{noAuth:!0})}function n(t){return s.post("/mms-api/news/list",t,{noAuth:!0})}function o(t){return s.post("/mms-api/news",t,{noAuth:!0})}export{o as g,n,t as s};

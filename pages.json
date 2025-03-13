@@ -1,0 +1,147 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "%index.title%"
+			}
+		},
+		{
+			"path": "pages/appointment/index",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/news/index",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path" : "pages/news/components/details",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/user/index",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/medicine/index",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/medicine/components/details",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/report/index",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/setting/index",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/setting/components/editProfile",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/setting/components/editPassword",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/privacy/privacy",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/privacy/userService",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/expert/index",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/service/index",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/expert/components/details",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/service/components/details",
+			"style" : 
+			{
+				"navigationStyle": "default",
+				"navigationBarTitleText" : ""
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#3b3029",
+		"backgroundColor": "#3b3029",
+		"navigationStyle": "custom"
+	}
+}

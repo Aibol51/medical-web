@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/appointment/index",
+    "pages/news/index",
+    "pages/login/index",
+    "pages/news/components/details",
+    "pages/user/index",
+    "pages/medicine/index",
+    "pages/medicine/components/details",
+    "pages/report/index",
+    "pages/setting/index",
+    "pages/setting/components/editProfile",
+    "pages/setting/components/editPassword",
+    "pages/privacy/privacy",
+    "pages/privacy/userService"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "__usePrivacyCheck__": true,
+  "usingComponents": {}
+}

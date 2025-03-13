@@ -1,0 +1,1 @@
+<view class=" data-v-3075e18a"><view class="navBar data-v-3075e18a"><view wx:for="{{a}}" wx:for-item="item" wx:key="b" bindtap="{{item.c}}" class="navItem data-v-3075e18a"><image src="{{item.a}}" class="icon data-v-3075e18a"/></view></view><view class="navHeight data-v-3075e18a"></view></view>

@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "uni-card": "../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uv-load-more": "../../uni_modules/uv-load-more/components/uv-load-more/uv-load-more"
+  }
+}

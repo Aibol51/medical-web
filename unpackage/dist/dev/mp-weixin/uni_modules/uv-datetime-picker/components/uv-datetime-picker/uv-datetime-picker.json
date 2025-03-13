@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uv-picker": "../../../uv-picker/components/uv-picker/uv-picker"
+  }
+}

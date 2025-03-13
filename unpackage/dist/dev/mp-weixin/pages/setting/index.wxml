@@ -1,0 +1,1 @@
+<view><view class="userCell"><uv-cell-group u-s="{{['d']}}" u-i="5aec75e3-0" bind:__l="__l"><uv-cell wx:for="{{a}}" wx:for-item="item" bindclick="{{item.a}}" u-i="{{item.b}}" bind:__l="__l" u-p="{{item.c}}"></uv-cell></uv-cell-group></view></view>

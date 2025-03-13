@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "login-page": "./components/login",
+    "register-page": "./components/register",
+    "uni-segmented-control": "../../uni_modules/uni-segmented-control/components/uni-segmented-control/uni-segmented-control",
+    "ws-wx-privacy": "../../uni_modules/ws-wx-privacy/components/ws-wx-privacy/ws-wx-privacy"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="product-grid"><view wx:for="{{a}}" wx:for-item="product" wx:key="d" class="product-item" bindtap="{{product.e}}"><image class="product-image" src="{{product.a}}" mode="aspectFill"/><text class="product-name">{{product.b}}</text><text class="product-price">库存{{product.c}}</text></view></view>
