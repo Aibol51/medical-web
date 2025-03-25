@@ -233,7 +233,11 @@
 	});
 	const popupRefs = ref()
 	const openPopup = () => {
-		popupRefs.value.open()
+		if (Cache.has(LOGIN_STATUS, false)) {
+			popupRefs.value.open()
+		} else {
+			window.location.href = 'https://wa.me/77008011117';
+		}
 	}
 	const closePopup = () => {
 		popupRefs.value.close()
@@ -341,7 +345,6 @@
 		},
 		'userInfo.sex': {
 			type: 'string',
-			max: 1,
 			required: true,
 			message: t('appointment.selectGenderOption'),
 			trigger: ['blur', 'change']
@@ -513,6 +516,54 @@
 		}).catch(err => {
 			console.error(err);
 		});
+		// 	else {
+		// 		// 创建一个数组来存储有效的消息行
+		// 		const messageLines = [`${t('appointment.booking')}:`];
+
+		// 		// 检查每个字段，只有不为空时才添加
+		// 		if (model1.userInfo.name) {
+		// 			messageLines.push(`${t('appointment.name')}: ${model1.userInfo.name}`);
+		// 		}
+
+		// 		if (model1.userInfo.mobile) {
+		// 			messageLines.push(`${t('appointment.phone')}: ${model1.userInfo.mobile}`);
+		// 		}
+
+		// 		if (model1.userInfo.idCard) {
+		// 			messageLines.push(`${t('appointment.idCard')}: ${model1.userInfo.idCard}`);
+		// 		}
+
+		// 		if (model1.userInfo.sexValue) {
+		// 			messageLines.push(`${t('appointment.gender')}: ${model1.userInfo.sexValue}`);
+		// 		}
+
+		// 		if (model1.userInfo.age) {
+		// 			messageLines.push(`${t('appointment.age')}: ${model1.userInfo.age}`);
+		// 		}
+
+		// 		if (bookingDate.value) {
+		// 			messageLines.push(
+		// 				`${t('appointment.dateTime')}: ${formatToDate(bookingDate.value)+'-'+formatToTime(bookingDate.value)}`
+		// 				);
+		// 		}
+
+		// 		if (model1.userInfo.symptoms) {
+		// 			messageLines.push(`${t('appointment.symptoms')}: ${model1.userInfo.symptoms}`);
+		// 		}
+
+		// 		if (model1.userInfo.remarks) {
+		// 			messageLines.push(`${t('appointment.remarks')}: ${model1.userInfo.remarks}`);
+		// 		}
+
+		// 		// 将所有非空行连接成一个字符串，每行之间用换行符分隔
+		// 		const whatsappMessage = messageLines.join('\n');
+
+		// 		// 对消息进行URL编码
+		// 		const encodedMessage = encodeURIComponent(whatsappMessage);
+
+		// 		// Redirect to WhatsApp with the data
+		// 		window.location.href = `https://wa.me/77008011117?text=${encodedMessage}`;
+		// 	}
 	};
 
 	// 处理完整的预约逻辑
@@ -521,8 +572,10 @@
 			if (Cache.has(LOGIN_STATUS, false)) {
 				await createBooking();
 			} else {
-				await form.value.validate();
-				await getSms('+7' + model1.userInfo.mobile);
+				// await form.value.validate();
+				// await createBooking();
+				window.location.href = 'https://wa.me/77008011117';
+				// await getSms('+7' + model1.userInfo.mobile);
 			}
 		} catch (error) {
 			uni.showToast({
@@ -618,6 +671,7 @@
 		model1.userInfo.sex = e.name
 		model1.userInfo.sexValue = e.value
 		console.log(model1.userInfo.sex)
+		console.log(model1.userInfo.sexValue)
 		// 对部分表单字段进行校验
 		form.value.validateField('userInfo.sex', err => {
 			// 处理错误后的逻辑

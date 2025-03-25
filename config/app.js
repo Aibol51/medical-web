@@ -5,8 +5,8 @@
 // 聊天接口修改此字符 小程序聊天要求wss 例如：wss://mer.crmeb.net
 
 
-let httpApi = 'https://kangrentang.kangyitong.cn'
-// let httpApi = ''
+// let httpApi = 'https://kangrentang.kangyitong.cn'
+let httpApi = ''
 let wsApi = 'wss://kyhospital.sdwanyue.com:9500/'
 
 

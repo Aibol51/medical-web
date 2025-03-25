@@ -470,8 +470,8 @@
 
 			.features-container {
 				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 20rpx;
+				grid-template-columns: repeat(3, 1fr);
+				column-gap: 20rpx;
 				padding: 30rpx;
 				background-color: #FFFFFF;
 				border-radius: 20rpx;
