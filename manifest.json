@@ -1,6 +1,6 @@
 {
     "name" : "kangrentang",
-    "appid" : "__UNI__3C1272F",
+    "appid" : "__UNI__G7583C1C",
     "description" : "",
     "versionName" : "1.0.1",
     "versionCode" : "100",
@@ -68,7 +68,7 @@
             "urlCheck" : false
         },
         "usingComponents" : true,
-		"__usePrivacyCheck__": true
+        "__usePrivacyCheck__" : true
     },
     "mp-alipay" : {
         "usingComponents" : true
@@ -89,11 +89,11 @@
             "port" : 5289,
             "disableHostCheck" : true,
             "proxy" : {
-                "/mms-api" : {
-                    "target" : "https://kangrentang.kangyitong.cn",
+                "/app-api" : {
+                    "target" : "http://localhost:48080",
                     "changeOrigin" : true,
                     "pathRewrite" : {
-                        "^/mms-api" : ""
+                        "^/app-api" : ""
                     }
                 }
             }

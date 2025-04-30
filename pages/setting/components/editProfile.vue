@@ -55,7 +55,7 @@ import { ref, reactive, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Cache from '@/utils/cache'
 import {
-	getMemberById,
+	getMemberInfo,
 	modifyProfile
 } from '@/api/user.js'
 import {
@@ -86,11 +86,8 @@ const rules = {
 }
 
 // 获取用户信息
-const getMemberInfo = () => {
-	const data = {
-		id: Cache.get(USER_INFO).userId
-	}
-	getMemberById(data).then(res => {
+const getMember = () => {
+	getMemberInfo().then(res => {
 		if (res.code === 0) {
 			formData.nickname = res.data.nickname
 			originalNickname.value = res.data.nickname
@@ -167,7 +164,7 @@ const goBack = () => {
 
 // 页面显示时获取用户信息
 onMounted(() => {
-	getMemberInfo()
+	getMember()
 })
 </script>
 

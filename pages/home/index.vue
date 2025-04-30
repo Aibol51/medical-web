@@ -19,7 +19,7 @@
 				<!-- 用户欢迎区 -->
 				<view class="welcome-container">
 					<text class="welcome-text">{{t('home.hello')}}</text>
-					<view v-if="!Cache.has(USER_INFO, false)" class="auth-buttons"
+					<view v-if="!Cache.has(USER_INFO)" class="auth-buttons"
 						@click="menuClick('/pages/login/index')">
 						<text class="login-text">{{t("login.login")}} / {{t("login.register")}}</text>
 					</view>
@@ -44,9 +44,9 @@
 						<view class="swiper-item-container">
 							<image class="banner-image" :src="item.banner" mode="aspectFill" />
 							<view class="banner-overlay"></view>
-							<view v-if="item.title" class="banner-title">
+				<!-- 			<view v-if="item.title" class="banner-title">
 								<text>{{item.title}}</text>
-							</view>
+							</view> -->
 						</view>
 					</swiper-item>
 				</swiper>
@@ -255,7 +255,7 @@
 	// Fetch Swiper List
 	const getSwiperList = () => {
 		const data = {
-			page: 1,
+			pageNo: 1,
 			pageSize: 50
 		}
 
@@ -264,13 +264,11 @@
 				const currentLocale = uni.getLocale()
 				const languageKey = currentLocale === 'zh-Hans' ? 'Zh' :
 					currentLocale.charAt(0).toUpperCase() + currentLocale.slice(1)
-				const bannerKey = `banner${languageKey}`
+				const bannerKey = `image${languageKey}`
 
-				swiperData.value = res.data.data.map(item => ({
+				swiperData.value = res.data.list.map(item => ({
 					id: item.id,
-					title: item[`title${languageKey}`],
 					banner: item[bannerKey],
-					jumpUrl: item.jumpUrl
 				})).filter(item => item.banner)
 				swiperLoading.value = false
 			}
@@ -280,7 +278,7 @@
 	}
 	const getNewsList = () => {
 		const data = {
-			page: 1,
+			pageNo: 1,
 			pageSize: 50
 		}
 
@@ -291,10 +289,10 @@
 				const languageKey = currentLocale === 'zh-Hans' ? 'Zh' :
 					currentLocale.charAt(0).toUpperCase() + currentLocale.slice(1)
 
-				newsData.value = res.data.data.map(item => ({
+				newsData.value = res.data.list.map(item => ({
 					id: item.id,
 					title: item[`title${languageKey}`],
-					converUrl: item.coverUrl
+					converUrl: item.coverPath
 				}))
 				console.log(newsData.value)
 				newsLoading.value = false
@@ -320,10 +318,8 @@
 
 	})
 	onShow(() => {
-		if (Cache.has(USER_INFO, false)) {
+		if (Cache.has(USER_INFO)) {
 			userName.value = Cache.get(USER_INFO).nickname
-			console.log(userName.value)
-			console.log(Cache.has(USER_INFO, false))
 		}
 	})
 </script>
@@ -358,6 +354,7 @@
 					margin-bottom: 20rpx;
 
 					.language-picker {
+						display: flex;
 						background-color: rgba(255, 255, 255, 0.2);
 						padding: 10rpx;
 						border-radius: 50%;

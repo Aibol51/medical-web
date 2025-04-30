@@ -63,13 +63,13 @@
 					currentLocale.charAt(0).toUpperCase() + currentLocale.slice(1)
 
 				const nameKey = `name${languageKey}`
-				const descriptionKey = `description${languageKey}`
+				const descriptionKey = `content${languageKey}`
 
 				// 安全地赋值，避免直接修改响应数据
 				serviceData.value = {
 					name: res.data[nameKey] || '',
 					description: res.data[descriptionKey] || '',
-					images: res.data.coverUrl
+					images: res.data.coverPath
 				}
 
 				// 使用微任务更新加载状态，避免阻塞

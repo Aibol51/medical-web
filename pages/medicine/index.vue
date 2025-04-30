@@ -37,19 +37,17 @@
 					const languageKey = currentLocale === 'zh-Hans' ? 'Zh' :
 						currentLocale.charAt(0).toUpperCase() + currentLocale.slice(1);
 					const nameKey = `name${languageKey}`;
-					const descriptionKey = `description${languageKey}`;
 
-					console.log("原始数据:", res.data.data);
+					console.log("原始数据:", res.data.list);
 
 					// 映射数据并根据状态筛选
-					medicineData.value = res.data.data.map(item => ({
+					medicineData.value = res.data.list.map(item => ({
 						id: item.id,
-						name: item[nameKey],
-						description: item[descriptionKey],
-						images: item.images,
+						name: name[nameKey],
+						images: item.imagePath,
 						status: item.status,
 						quantity: item.quantity
-					})).filter(item => item.status === 1); // 仅筛选 status 为 1 的数据
+					})); // 仅筛选 status 为 1 的数据
 
 					console.log("处理后的数据:", medicineData.value);
 				} else {

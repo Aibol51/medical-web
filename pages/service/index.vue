@@ -39,11 +39,11 @@
 		status.value = 'loading';
 		try {
 			const res = await servicetList({
-				page: page.value,
+				pageNo: page.value,
 				pageSize: pageSize.value
 			});
 			if (res.code === 0) {
-				const serverData = res.data?.data || [];
+				const serverData = res.data?.list || [];
 				if (serverData.length === 0 && page.value === 1) {
 					hasMore.value = false;
 					status.value = 'nomore';
@@ -55,7 +55,7 @@
 				const newData = serverData.map(item => ({
 					id: item.id,
 					title: item[`name${languageKey}`],
-					converUrl: item.coverUrl
+					converUrl: item.coverPath
 				}));
 				if (newData.length < pageSize.value) {
 					hasMore.value = false;

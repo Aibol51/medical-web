@@ -115,14 +115,14 @@
     status.value = 'loading';
 
     const data = {
-      page: page.value,
+      pageNo: page.value,
       pageSize: pageSize.value
     };
 
     newsList(data)
       .then(res => {
         if (res.code === 0) {
-          const serverData = res.data?.data || [];
+          const serverData = res.data?.list || [];
           if (serverData.length === 0 && page.value === 1) {
             hasMore.value = false;
             status.value = 'nomore';
@@ -136,8 +136,8 @@
           const newData = serverData.map(item => ({
             id: item.id,
             title: item[`title${languageKey}`],
-            converUrl: item.coverUrl,
-            createdAt: item.createdAt,
+            converUrl: item.coverPath,
+            createdAt: item.createTime,
             views: Math.floor(Math.random() * 1000) // 模拟浏览量，实际应从API获取
           }));
 

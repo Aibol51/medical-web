@@ -105,7 +105,6 @@
 					getLogout().then(res => {
 						if (res.code === 0) {
 							Cache.clear(USER_INFO);
-							Cache.clear(LOGIN_STATUS);
 
 							uni.showToast({
 								title: t('user.logOutSuccess'),
@@ -134,7 +133,7 @@
 	}
 
 	onShow(() => {
-		if (Cache.has(USER_INFO, false)) {
+		if (Cache.has(USER_INFO)) {
 			const userInfo = Cache.get(USER_INFO);
 			userName.value = userInfo.nickname;
 			userID.value = userInfo.id || '';

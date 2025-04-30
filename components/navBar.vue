@@ -67,7 +67,7 @@
 		if (props.activeIndex === index) return
 		// 跳转到对应路径
 		if (navList[index].auth) {
-			if (!Cache.has(LOGIN_STATUS, false)) {
+			if (!Cache.has(USER_INFO)) {
 
 				uni.showToast({
 					title: t('login.prompt'),

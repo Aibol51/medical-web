@@ -1,12 +1,12 @@
 <template>
 	<view class="loginContent">
 		<uni-forms ref="valiForm" :rules="rules" :model-value="formData" label-position="top" label-width="70">
-			<uni-forms-item required :label="$t('register.username')" name="username">
-				<uni-easyinput type="text" v-model="formData.username" :placeholder="$t('register.username.input')">
+			<uni-forms-item required :label="$t('register.username')" name="nickname">
+				<uni-easyinput type="text" v-model="formData.nickname" :placeholder="$t('register.username.input')">
 				</uni-easyinput>
 			</uni-forms-item>
-			<uni-forms-item required :label="$t('login.phone.number')" name="phoneNumber">
-				<uni-easyinput type="number" v-model="formData.phoneNumber" :placeholder="$t('login.phone.input')">
+			<uni-forms-item required :label="$t('login.phone.number')" name="mobile">
+				<uni-easyinput type="number" v-model="formData.mobile" :placeholder="$t('login.phone.input')">
 					<template #left>
 						<text style="margin-left: 10rpx;">+7</text>
 					</template>
@@ -19,8 +19,8 @@
 				<uni-easyinput type="password" v-model="formData.rePassword"
 					:placeholder="$t('login.password.input')" />
 			</uni-forms-item>
-			<uni-forms-item required :label="$t('login.verification.code')" name="captcha">
-				<uni-easyinput type="text" v-model="formData.captcha" :placeholder="$t('login.verification.input')">
+			<uni-forms-item required :label="$t('login.verification.code')" name="code">
+				<uni-easyinput type="text" v-model="formData.code" :placeholder="$t('login.verification.input')">
 					<template #right>
 						<button :loading="isSending" size="mini" :disabled="isSending" @click="sendCaptcha"
 							style="margin: auto;padding: 0 20rpx;background-color: #3b3029; color: #e4e4e4;">
@@ -57,11 +57,11 @@
 
 	// Reactive state
 	const formData = reactive({
-		username: '',
-		phoneNumber: '',
+		nickname: '',
+		mobile: '',
 		password: '',
 		rePassword: '',
-		captcha: '',
+		code: '',
 	});
 
 	const isSending = ref(false);
@@ -69,13 +69,13 @@
 
 	// Form validation rules
 	const rules = reactive({
-		username: {
+		nickname: {
 			rules: [{
 				required: true,
 				errorMessage: i18n.global.t('register.username.input'),
 			}],
 		},
-		phoneNumber: {
+		mobile: {
 			rules: [{
 					required: true,
 					errorMessage: i18n.global.t('login.phone.input'),
@@ -119,13 +119,13 @@
 				}
 			],
 		},
-		captcha: {
+		code: {
 			rules: [{
 					required: true,
 					errorMessage: i18n.global.t('login.verification.input'),
 				},
 				{
-					minLength: 5,
+					minLength: 4,
 					maxLength: 5,
 					errorMessage: i18n.global.t('login.verification.error'),
 				},
@@ -177,7 +177,7 @@
 			await valiForm.value.validate(); // 验证表单数据
 			const submitData = {
 				...formData,
-				phoneNumber: '+7' + formData.phoneNumber
+				mobile: '+7' + formData.mobile
 			};
 
 			const res = await registerMobile(submitData); // 调用注册接口
@@ -203,12 +203,12 @@
 
 	const sendCaptcha = async () => {
 		// 校验手机号
-		const phoneRules = rules.phoneNumber.rules;
-		const phoneNumber = formData.phoneNumber;
+		const phoneRules = rules.mobile.rules;
+		const mobile = formData.mobile;
 
 		// 手动校验手机号是否符合规则
 		const isPhoneValid = phoneRules.every(rule => {
-			if (rule.required && !phoneNumber) {
+			if (rule.required && !mobile) {
 				uni.showToast({
 					title: rule.errorMessage,
 					icon: 'none',
@@ -216,7 +216,7 @@
 				});
 				return false;
 			}
-			if (rule.minLength && phoneNumber.length < rule.minLength) {
+			if (rule.minLength && mobile.length < rule.minLength) {
 				uni.showToast({
 					title: rule.errorMessage,
 					icon: 'none',
@@ -224,7 +224,7 @@
 				});
 				return false;
 			}
-			if (rule.maxLength && phoneNumber.length > rule.maxLength) {
+			if (rule.maxLength && mobile.length > rule.maxLength) {
 				uni.showToast({
 					title: rule.errorMessage,
 					icon: 'none',
@@ -238,7 +238,8 @@
 		if (!isPhoneValid || isSending.value) return;
 
 		const data = {
-			phoneNumber: "+7" + phoneNumber,
+			mobile: "+7" + mobile,
+			scene: 5
 		};
 
 		const res = await getSmsCaptcha(data);

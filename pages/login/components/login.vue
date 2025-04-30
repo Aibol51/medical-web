@@ -12,15 +12,6 @@
 			<uni-forms-item required :label="$t('login.password')" name="password">
 				<uni-easyinput type="password" v-model="formData.password" :placeholder="$t('login.password.input')" />
 			</uni-forms-item>
-
-			<uni-forms-item required :label="$t('login.verification.code')" name="captcha">
-				<uni-easyinput type="text" v-model="formData.captcha" :placeholder="$t('login.verification.input')">
-					<template #left>
-						<image @click="getCaptchaApi" style="width: 160rpx; height: 60rpx;" :src="captcha.image"
-							mode="" />
-					</template>
-				</uni-easyinput>
-			</uni-forms-item>
 		</uni-forms>
 
 		<button type="default" style="color:#e4e4e4; background-color:#3b3029;" @click="submit">
@@ -35,7 +26,6 @@
 		onMounted
 	} from "vue";
 	import {
-		getCaptcha,
 		loginMobile
 	} from "@/api/user.js";
 	import Cache from "@/utils/cache";
@@ -56,13 +46,6 @@
 	const formData = ref({
 		phoneNumber: "",
 		password: "",
-		captcha: "",
-		captchaId: ""
-	});
-
-	const captcha = ref({
-		id: "",
-		image: ""
 	});
 
 	const rules = ref({
@@ -72,8 +55,8 @@
 					errorMessage: t("login.phone.input")
 				},
 				{
-					minLength: 10,
-					maxLength: 10,
+					minLength: 1,
+					maxLength: 15,
 					errorMessage: t("login.phone.length.error")
 				}
 			]
@@ -90,25 +73,7 @@
 				}
 			]
 		},
-		captcha: {
-			rules: [{
-					required: true,
-					errorMessage: t("login.verification.input")
-				},
-				{
-					minLength: 5,
-					maxLength: 5,
-					errorMessage: t("login.verification.error")
-				}
-			]
-		}
 	});
-
-	const getCaptchaApi = async () => {
-		const res = await getCaptcha();
-		captcha.value.image = res.data.imgPath;
-		captcha.value.id = res.data.captchaId;
-	};
 
 	function doRequire() {
 		return new Promise((resolve, reject) => {
@@ -155,16 +120,15 @@
 			// #endif
 
 			const data = {
-				phoneNumber: "+7" + formData.value.phoneNumber,
-				captchaId: captcha.value.id,
-				captcha: formData.value.captcha,
+				mobile: '+7' + formData.value.phoneNumber,
 				password: formData.value.password
 			};
 
 			const loginRes = await loginMobile(data);
+			console.log(loginRes)
 			if (loginRes.code === 0) {
-				Cache.set(USER_INFO, loginRes.data, loginRes.data.expire);
-				Cache.set(LOGIN_STATUS, loginRes.data.token, loginRes.data.expire);
+				
+				Cache.set(USER_INFO, loginRes.data);
 				uni.showToast({
 					title: t("login.login.success"),
 					icon: "none",
@@ -176,7 +140,7 @@
 						animationType: "none"
 					});
 				}, 1000);
-			} else if (loginRes.code === 3) {
+			} else if (loginRes.code === 1004003000) {
 				getCaptchaApi();
 				uni.showToast({
 					title: t("login.login.error"),
@@ -188,12 +152,6 @@
 			console.log("表单错误信息：", err);
 		}
 	};
-
-
-	onMounted(() => {
-		getCaptchaApi();
-		console.log("getCaptchaApi has been called");
-	});
 </script>
 
 <style scoped lang="scss">

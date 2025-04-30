@@ -39,11 +39,11 @@
 		status.value = 'loading';
 		try {
 			const res = await expertList({
-				page: page.value,
+				pageNo: page.value,
 				pageSize: pageSize.value
 			});
 			if (res.code === 0) {
-				const serverData = res.data?.data || [];
+				const serverData = res.data?.list || [];
 				if (serverData.length === 0 && page.value === 1) {
 					hasMore.value = false;
 					status.value = 'nomore';
@@ -54,8 +54,8 @@
 					currentLocale.slice(1);
 				const newData = serverData.map(item => ({
 					id: item.id,
-					title: item[`name${languageKey}`],
-					converUrl: item.coverUrl
+					title: item.nickname,
+					converUrl: item.avatar
 				}));
 				if (newData.length < pageSize.value) {
 					hasMore.value = false;

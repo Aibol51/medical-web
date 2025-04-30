@@ -1,4 +1,3 @@
-
 // let openPlantGrass = '-openPlantGrass-'
 
 // 网络接口修改此字符 
@@ -6,16 +5,17 @@
 
 
 // let httpApi = 'https://kangrentang.kangyitong.cn'
-let httpApi = ''
+let httpApi = 'http://127.0.0.1:48080'
+let port = '/app-api'
 let wsApi = 'wss://kyhospital.sdwanyue.com:9500/'
 
 
 export const HEADER = {
-    'content-type': 'application/json',
-    'Form-type': 'app',
+	'content-type': 'application/json',
+	'Form-type': 'app',
 };
 
-export const HTTP_REQUEST_URL = httpApi;
+export const HTTP_REQUEST_URL = httpApi + port;
 export const VUE_APP_WS_URL = `${wsApi}?`;
 // export const openPlantGrass = openPlantGrass;
 export const TOKENNAME = 'authorization';

@@ -1,7 +1,8 @@
 <template>
 	<view class="record-list">
 		<!-- 空状态显示 -->
-		<uv-empty v-if="!reportData?.length" mode="history" textSize="18" :text="$t('report.empty')" width="200" height="200" />
+		<uv-empty v-if="!reportData?.length" mode="history" textSize="18" :text="$t('report.empty')" width="200"
+			height="200" />
 
 		<!-- 简化卡片列表显示 -->
 		<view v-else>
@@ -9,9 +10,10 @@
 				<view class="record-header">
 					<view class="patient-info">
 						<text class="patient-name">{{item.patientName}}</text>
-						<text class="gender-age">{{item.gender === 1 ? $t('report.male') : $t('report.female')}} | {{item.age}}{{$t('report.age')}}</text>
+						<text class="gender-age">{{item.gender === 1 ? $t('report.male') : $t('report.female')}} |
+							{{item.age}}{{$t('report.age')}}</text>
 					</view>
-					<text class="visit-date">{{formatDate(item.createdAt)}}</text>
+					<text class="visit-date">{{formatDate(item.createTime)}}</text>
 				</view>
 
 				<view class="record-brief">
@@ -34,7 +36,7 @@
 
 		<!-- 底部弹窗 -->
 		<uv-popup ref="popupRef" mode="bottom" @change="changePopup" :close-on-click-overlay="true" :closeable="true"
-			:round="20">
+			custom-style="max-height: 85vh;" :round="20">
 			<view class="popup-content" v-if="currentRecord">
 				<view class="popup-header">
 					<text class="popup-title">{{$t('report.popupTitle')}}</text>
@@ -69,7 +71,7 @@
 						</view>
 						<view class="info-cell">
 							<text class="info-label">{{$t('report.visitTime')}}</text>
-							<text class="info-value">{{formatDateTime(currentRecord.createdAt)}}</text>
+							<text class="info-value">{{formatDateTime(currentRecord.createTime)}}</text>
 						</view>
 					</view>
 				</view>
@@ -229,7 +231,7 @@
 					</view>
 				</view>
 
-<!-- 				<view class="popup-footer">
+				<!-- 				<view class="popup-footer">
 					<button class="action-button print">打印记录</button>
 					<button class="action-button share">分享记录</button>
 				</view> -->
@@ -265,12 +267,12 @@
 
 	const getReportList = () => {
 		const data = {
-			page: 1,
+			pageNo: 1,
 			pageSize: 50
 		}
 		reportList(data).then(res => {
 			if (res.code === 0) {
-				reportData.value = res.data.data
+				reportData.value = res.data.list
 				console.log(res.data)
 			}
 		}).catch(err => {
@@ -282,6 +284,7 @@
 	const showDetail = (index) => {
 		currentIndex.value = index
 		currentRecord.value = reportData.value[index]
+		console.log(currentRecord.value)
 		popupRef.value.open()
 	}
 
@@ -302,6 +305,7 @@
 
 	// 格式化日期时间
 	const formatDateTime = (timestamp) => {
+		console.log(timestamp)
 		if (!timestamp) return '--'
 		const date = new Date(timestamp)
 		return `${formatDate(timestamp)} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
@@ -675,6 +679,7 @@
 				display: flex;
 				justify-content: space-between;
 				margin-top: 20rpx;
+				margin-bottom: 20rpx;
 
 				.therapy-item {
 					flex: 1;

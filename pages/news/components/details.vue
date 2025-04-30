@@ -170,9 +170,9 @@
 				newsData.value = {
 					title: res.data[titleKey] || '',
 					content: res.data[contentKey] || '',
-					coverImage: res.data.coverUrl || '',
-					createdAt: formatToDate(res.data.createdAt),
-					time: formatToTime(res.data.createdAt),
+					coverImage: res.data.coverPath || '',
+					createdAt: formatToDate(res.data.createTime),
+					time: formatToTime(res.data.createTime),
 					summary: res.data[`summary${languageKey}`] || '',
 					author: res.data.author || '',
 					category: res.data.category || '',

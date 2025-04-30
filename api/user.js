@@ -4,7 +4,8 @@ import request from "@/utils/request.js";
  * @param data object 用户手机号 
  */
 export function loginMobile(data) {
-	return request.post("/mms-api/member/login_by_mobile", data, {
+	console.log('data',data)
+	return request.post("/member/auth/login", data, {
 		noAuth: true
 	});
 }
@@ -24,7 +25,7 @@ export function loginBySms(data) {
  * @param data object 用户手机号 
  */
 export function registerMobile(data) {
-	return request.post("/mms-api/member/register_by_sms", data, {
+	return request.post("/member/auth/register", data, {
 		noAuth: true
 	});
 }
@@ -55,7 +56,7 @@ export function getCaptcha() {
  * 
  */
 export function getSmsCaptcha(data) {
-	return request.post('/mms-api/captcha/sms', data, {
+	return request.post('/member/auth/send-sms-code', data, {
 		noAuth: true
 	});
 }
@@ -74,15 +75,15 @@ export function loginVerify(data) {
  * 退出登录
  * */
 export function getLogout() {
-	return request.get("/mms-api/member/logout");
+	return request.post("/member/auth/logout");
 }
 
 /**
- * 通过id获取用户信息
+ * 获取用户信息
  * @param data object 用户id
  */
-export function getMemberById(data) {
-	return request.post("/mms-api/member/getMemberInfo", data);
+export function getMemberInfo() {
+	return request.get("/member/user/get");
 }
 
 /**
@@ -90,7 +91,7 @@ export function getMemberById(data) {
  * @param data object 手机号,验证码,密码
  */
 export function resetPasswordBySms(data) {
-	return request.post("/mms-api/member/reset_password_by_sms", data);
+	return request.put("/member/user/reset-password", data);
 }
 
 
@@ -99,100 +100,5 @@ export function resetPasswordBySms(data) {
  * @param data object 昵称
  */
 export function modifyProfile(data) {
-	return request.post("/mms-api/member/profile", data);
-}
-
-
-
-
-/**
- * 用户发送验证码
- * @param data object 用户手机号
- */
-export function registerVerify(data) {
-	return request.post("App.Login.GetCode", data, {
-		noAuth: true
-	});
-}
-/**
- * 用户手机号注册
- * @param data object 用户手机号 验证码 密码
- */
-export function register(data) {
-	return request.post("App.Login.Reg", data, {
-		noAuth: true
-	});
-}
-
-/**
- * 用户手机号修改密码
- * @param data object 用户手机号 验证码 密码
- */
-export function registerReset(data) {
-	return request.post("App.Login.Forget", data, {
-		noAuth: true
-	});
-}
-// 修改昵称
-export function updateInfo(data) {
-	return request.post('App.User.UpUserInfo', data);
-}
-/**
- * 用户登录
- * @param data object 用户账号密码
- */
-export function loginH5(data) {
-	return request.post("App.Login.LoginByPass", data, {
-		noAuth: true
-	});
-}
-
-/**
- * 用户手机号忘记密码
- */
-export function registerForget(data) {
-	return request.post("App.Login.Forget", data, {
-		noAuth: true
-	});
-}
-
-/**
- * 获取协议
- * 
- */
-export function getIntegralInfo() {
-	return request.get('App.Agreement.Get');
-}
-
-/**
- * 注销账户
- * @param object data
- * 
- */
-export function userOut(data) {
-	return request.post(`App.User.WriteOff`, data)
-}
-
-/**
- * 获取用户信息
- * 
- */
-export function getUserInfo() {
-	return request.get('App.User.GetBaseInfo');
-}
-
-/**
- * 头像
- * 
- */
-export function editAvatar(data) {
-	return request.post('App.User.UpUserInfo', data);
-}
-/** 修改手机号 */
-export function modifyPhone(data) {
-	return request.post('App.User.UpMobile', data);
-}
-/** 修改密码 */
-export function modifyPassword(data) {
-	return request.post('App.User.UpPass', data);
+	return request.put("/member/user/update", data);
 }

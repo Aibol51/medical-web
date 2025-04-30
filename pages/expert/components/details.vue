@@ -11,7 +11,7 @@
 				</uv-loading-icon>
 			</view>
 		</template>
-		<template v-else-if="expertData.images">
+		<template v-else-if="expertData">
 			<view class="medicine-image-container">
 				<image class="medicine-image" :src="expertData.images" />
 			</view>
@@ -42,7 +42,8 @@
 	// 使用响应式对象，减少嵌套
 	const expertData = ref({
 		name: '',
-		description: ''
+		description: '',
+		images:''
 	})
 
 	const loadingState = ref(true)
@@ -67,9 +68,9 @@
 
 				// 安全地赋值，避免直接修改响应数据
 				expertData.value = {
-					name: res.data[nameKey] || '',
+					name: res.data.nickname || '',
 					description: res.data[descriptionKey] || '',
-					images: res.data.coverUrl
+					images: res.data.avatar
 				}
 
 				// 使用微任务更新加载状态，避免阻塞

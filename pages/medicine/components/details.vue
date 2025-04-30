@@ -71,7 +71,7 @@
 					name: res.data[nameKey] || '',
 					description: res.data[descriptionKey] || '',
 					quantity: res.data.quantity,
-					images: res.data.images
+					images: res.data.imagePath
 				}
 
 				// 使用微任务更新加载状态，避免阻塞

@@ -3,19 +3,18 @@
 		<!-- <statusBar :useThemeColor="false"></statusBar> -->
 		<uv-navbar bg-color="#3b3029" :title="t('appointment.booking')" :placeholder="true"
 			:leftIcon="isWeChatMiniProgram ? 'calendar' : ''" @leftClick="isWeChatMiniProgram && openPopup()">
+			<template v-slot:center>
+				<view class="tabs-container">
+					<uv-subsection :list="subsectionList" custom-style="height: 50rpx;" :current="currentTab"
+						@change="onTabChange" activeColor="#3b3029" mode="button"></uv-subsection>
+				</view>
+			</template>
 			<template v-slot:right>
 				<uv-icon color="#fff" v-if="!isWeChatMiniProgram" name="calendar" size="28"
 					@click="openPopup()"></uv-icon>
 			</template>
 		</uv-navbar>
-		<uv-empty v-if="appointmentList?.length === 0 || appointmentList === null" mode="history" textSize="18"
-			:text="t('appointment.noRecord')" width="200" height="200" icon-color="#767676" text-color="#767676">
-			<view style="margin-top: 30rpx;">
-				<uv-button color="#3b3029" type="success" size="large" :text="t('appointment.bookNow')"
-					@click="openPopup()"></uv-button>
-			</view>
-		</uv-empty>
-		<view class="bookingContent">
+		<view v-if="hasAppointments" class="bookingContent">
 			<view class="bookingList" v-for="(item,index) in appointmentList" @click="openDetail(item)">
 				<view class="bookingTop">
 					<view class="bookingDate">
@@ -34,6 +33,19 @@
 
 			</view>
 		</view>
+		<uv-empty v-else-if="currentTab === 0" mode="history" textSize="18" :text="t('appointment.noRecord')"
+			width="200" height="200" icon-color="#767676" text-color="#767676">
+			<view style="margin-top: 30rpx;">
+				<uv-button v-if="currentTab=== 0" color="#3b3029" type="success" size="large"
+					:text="t('appointment.bookNow')" @click="openPopup()"></uv-button>
+			</view>
+		</uv-empty>
+		<uv-empty v-else-if="currentTab === 1" mode="history" textSize="18" text="没有历史预约" width="200" height="200"
+			icon-color="#767676" text-color="#767676">
+			<view style="margin-top: 30rpx;">
+			</view>
+		</uv-empty>
+
 		<uv-popup ref="popupRefs" mode="bottom" @change="changePopup" :close-on-click-overlay="false" :closeable="true"
 			:round="20">
 			<view class="popupContent">
@@ -50,7 +62,7 @@
 							</template>
 						</uv-input>
 					</uv-form-item>
-					<uv-form-item :label="t('appointment.gender')" prop="userInfo.sex" border-bottom
+					<!-- <uv-form-item :label="t('appointment.gender')" prop="userInfo.sex" border-bottom
 						@click="showSexSelect" :required="true">
 						<uv-input v-model="model1.userInfo.sex" disabled disabled-color="#ffffff"
 							:placeholder="t('appointment.selectGender')" border="none">
@@ -59,15 +71,15 @@
 						<template #right>
 							<uv-icon name="arrow-right"></uv-icon>
 						</template>
-					</uv-form-item>
-					<uv-form-item :label="t('appointment.idCard')" prop="userInfo.idCard" border-bottom>
+					</uv-form-item> -->
+					<!-- <uv-form-item :label="t('appointment.idCard')" prop="userInfo.idCard" border-bottom>
 						<uv-input v-model="model1.userInfo.idCard" border="none" :maxlength="20" type="number">
 						</uv-input>
-					</uv-form-item>
-					<uv-form-item :label="t('appointment.age')" prop="userInfo.age" border-bottom :required="true">
+					</uv-form-item> -->
+					<!-- <uv-form-item :label="t('appointment.age')" prop="userInfo.age" border-bottom :required="true">
 						<uv-input v-model="model1.userInfo.age" border="none" :maxlength="3" type="number">
 						</uv-input>
-					</uv-form-item>
+					</uv-form-item> -->
 					<uv-form-item :label="t('appointment.dateTime')" prop="userInfo.appointmentTime" border-bottom
 						@click="showDataPicker" :required="true">
 						<uv-input v-model="model1.userInfo.appointmentTime" disabled disabled-color="#ffffff"
@@ -82,10 +94,10 @@
 						<uv-input v-model="model1.userInfo.symptoms" border="none">
 						</uv-input>
 					</uv-form-item>
-					<uv-form-item :label="t('appointment.remarks')" prop="userInfo.remarks" border-bottom>
+					<!-- <uv-form-item :label="t('appointment.remarks')" prop="userInfo.remarks" border-bottom>
 						<uv-input v-model="model1.userInfo.remarks" border="none">
 						</uv-input>
-					</uv-form-item>
+					</uv-form-item> -->
 
 					<uv-button type="primary" :text="t('appointment.submit')" custom-style="margin-top: 10px"
 						@click="handleAppointment"></uv-button>
@@ -121,18 +133,7 @@
 
 					<view class="detail-item">
 						<text class="label">{{t('appointment.phone')}}</text>
-						<text class="value">+7{{detailData.phoneNumber}}</text>
-					</view>
-
-					<view class="detail-item">
-						<text class="label">{{t('appointment.gender')}}</text>
-						<text
-							class="value">{{detailData.gender === 1 ? t('appointment.male') : t('appointment.female')}}</text>
-					</view>
-
-					<view class="detail-item">
-						<text class="label">{{t('appointment.age')}}</text>
-						<text class="value">{{detailData.age}} {{t('appointment.year')}}</text>
+						<text class="value">+7{{detailData.patientPhone}}</text>
 					</view>
 
 					<view class="detail-item">
@@ -143,12 +144,7 @@
 
 					<view class="detail-item">
 						<text class="label">{{t('appointment.symptoms')}}</text>
-						<text class="value">{{detailData.symptoms || t('appointment.noData')}}</text>
-					</view>
-
-					<view class="detail-item">
-						<text class="label">{{t('appointment.remarks')}}</text>
-						<text class="value">{{detailData.remarks || t('appointment.noData')}}</text>
+						<text class="value">{{detailData.symptom || t('appointment.noData')}}</text>
 					</view>
 
 					<view class="detail-item">
@@ -188,7 +184,8 @@
 <script setup>
 	import {
 		onLoad,
-		onShow
+		onShow,
+		onReady
 	} from '@dcloudio/uni-app'
 	import navBar from "@/components/navBar.vue"
 	import statusBar from "@/components/statusBar.vue"
@@ -224,6 +221,19 @@
 	} = useI18n()
 	// 定义响应式变量
 	const isWeChatMiniProgram = ref(false);
+	// Tab相关变量
+	const currentTab = ref(0);
+	const subsectionList = [{
+		name: '当前预约'
+	}, {
+		name: '历史预约'
+	}];
+
+	// Tab切换事件
+	const onTabChange = (index) => {
+		currentTab.value = index;
+		getAppointmentData();
+	};
 
 	// 检测运行环境
 	onMounted(() => {
@@ -233,11 +243,7 @@
 	});
 	const popupRefs = ref()
 	const openPopup = () => {
-		if (Cache.has(LOGIN_STATUS, false)) {
-			popupRefs.value.open()
-		} else {
-			window.location.href = 'https://wa.me/77008011117';
-		}
+		popupRefs.value.open()
 	}
 	const closePopup = () => {
 		popupRefs.value.close()
@@ -301,6 +307,11 @@
 		}
 	})
 	const appointmentList = ref([]);
+
+	const hasAppointments = computed(() => {
+		return Array.isArray(appointmentList.value) && appointmentList.value.length > 0;
+	})
+
 	const stepsList = [{
 			title: t('appointment.pending'),
 			value: 1,
@@ -380,7 +391,7 @@
 	const datetimePicker = ref(null)
 	const timePicker = ref(null)
 	const userId = ref('')
-	if (Cache.has(LOGIN_STATUS, false)) {
+	if (Cache.has(USER_INFO)) {
 		uni.getStorage({
 			key: 'USER_INFO',
 			success: function(res) {
@@ -456,7 +467,6 @@
 			if (res.code === 0) {
 				userId.value = res.data.userId
 				Cache.set(USER_INFO, res.data, res.data.expire);
-				Cache.set(LOGIN_STATUS, res.data.token, res.data.expire);
 				return 'success'; // 登录成功
 			} else if (res.code === 3) {
 				return 'not_registered'; // 账号未注册
@@ -488,15 +498,10 @@
 	const createBooking = () => {
 		const data = {
 			patientName: model1.userInfo.name,
-			phoneNumber: model1.userInfo.mobile,
-			idCard: model1.userInfo.idCard,
-			gender: model1.userInfo.sexValue,
-			age: Number(model1.userInfo.age),
+			patientPhone: model1.userInfo.mobile,
 			appointmentTime: bookingDate.value,
-			symptoms: model1.userInfo.symptoms,
-			remarks: model1.userInfo.remarks,
+			symptom: model1.userInfo.symptoms,
 			userId: userId.value,
-			id: '1'
 		};
 		return createAppointment(data).then(res => {
 			if (res.code === 0) {
@@ -506,7 +511,11 @@
 					duration: 2000
 				});
 				closePopup();
-				getAppointmentData();
+				if (Cache.has(USER_INFO)) {
+					getAppointmentData();
+				} else {
+					window.location.href = 'https://wa.me/77008011117';
+				}
 			} else {
 				// uni.showToast({
 				// 	title: '预约失败',
@@ -569,14 +578,8 @@
 	// 处理完整的预约逻辑
 	const handleAppointment = async () => {
 		try {
-			if (Cache.has(LOGIN_STATUS, false)) {
-				await createBooking();
-			} else {
-				// await form.value.validate();
-				// await createBooking();
-				window.location.href = 'https://wa.me/77008011117';
-				// await getSms('+7' + model1.userInfo.mobile);
-			}
+			await form.value.validate();
+			await createBooking();
 		} catch (error) {
 			uni.showToast({
 				title: t('appointment.validationFailed'),
@@ -746,16 +749,32 @@
 
 	const getAppointmentData = () => {
 		const data = {
-			page: 1,
+			pageNo: 1,
 			pageSize: 50,
 		}
+
+		// 根据当前选中的分段器添加不同的参数
+		if (currentTab.value === 1) {
+			// 历史预约需要传递status=3
+			data.status = 3;
+		}
+		// 当前预约不需要传递status参数
+
+		// 显示加载状态
+		uni.showLoading({
+			title: t('common.loading')
+		});
+
 		getAppointmentList(data).then(res => {
 			if (res.code === 0) {
-				appointmentList.value = res.data.data
-				console.log(res.data.data)
+				appointmentList.value = res.data.list
+				console.log(res.data.list)
 			}
 		}).catch(err => {
 			console.error(err)
+		}).finally(() => {
+			// 隐藏加载状态
+			uni.hideLoading();
 		})
 	}
 
@@ -796,8 +815,9 @@
 	// onLoad(() => {
 	// 	getAppointmentData()
 	// })
-	onShow(() => {
-		if (Cache.has(LOGIN_STATUS, false)) {
+	onLoad(() => {
+		if (Cache.has(USER_INFO)) {
+			console.log('用户已登录')
 			getAppointmentData()
 		}
 	})
@@ -889,6 +909,10 @@
 			}
 
 		}
+	}
+
+	.tabs-container {
+		width: 500rpx;
 	}
 
 	.bookingContent {
