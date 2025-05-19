@@ -49,7 +49,7 @@
 	"login.password.length.error": "Құпия сөз ұзындығы 6 пен 16 таңба арасында болуы керек",
 	"login.verification.error": "Дұрыс тексеру кодын енгізіңіз",
 	"login.login.success": "Кіру сәтті аяқталды",
-	"login.login.error": "Телефон нөмірі, құпия сөз немесе тексеру коды қате",
+	"login.login.error": "Телефон нөмірі немесе құпия сөз қате",
 
 	"register.username": "Пайдаланушы аты",
 	"register.username.input": "Пайдаланушы атын енгізіңіз",
@@ -107,6 +107,11 @@
 	"appointment.loginFail": "Кіру сәтсіз аяқталды.",
 	"appointment.codeSendSuccess": "Растау коды жіберілді.",
 	"appointment.codeSendFail": "Растау кодын жіберу сәтсіз аяқталды.",
+	"appointment.selectDoctor": "Мамандарды таңдаңыз",
+	"appointment.selectDoctorOption": "Мамандарды таңдаңыз",
+	"appointment.currentAppointment": "Жазылу",
+	"appointment.historyAppointment": "Жазылу тарихы",
+	"appointment.noHistory": "Жазылу тарихы жоқ",
 
 	"user.logOut": "Шығу",
 	"user.logOutSuccess": "Шығу сәтті аяқталды!", // 登出成功!
@@ -127,6 +132,8 @@
 	"user.passwordMedium": "Орташа",
 	"user.passwordStrong": "Күшті",
 	"user.passwordVeryStrong": "Өте күшті",
+	"user.confirmLogout": "Жүйеден шыққыңыз келе ме?",
+	"user.logoutConfirmation": "Жүйеден шығу",
 
 	"news.featured": "Ерекше",
 	"news.empty": "Жаңалықтар жоқ",
@@ -226,5 +233,9 @@
 	"report.medication.3": "Қытай шөптері",
 	"report.medication.4": "Батыс медицинасы",
 
-	"report.diagnosis": "Диагноз"
+	"report.diagnosis": "Диагноз",
+
+	"pharmacy.stock": "Саны",
+	"pharmacy.unit": "шт.",
+	"pharmacy.empty": "Мазмұн жоқ"
 }

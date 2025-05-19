@@ -1,7 +1,6 @@
 import { createI18n } from 'vue-i18n';
 import en from './en.json';
 import zhHans from './zh-Hans.json';
-import ja from './ja.json';
 import kk from './kk.json';
 import ru from './ru.json';
 
@@ -12,7 +11,6 @@ const i18n = createI18n({
   messages: {
     en,
     'zh-Hans': zhHans,
-    ja,
     kk,
     ru
   }

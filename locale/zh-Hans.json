@@ -50,7 +50,7 @@
 	"login.password.length.error": "密码长度在 6 到 16 个字符",
 	"login.verification.error": "请输入正确验证码",
 	"login.login.success": "登录成功",
-	"login.login.error": "手机号密码或验证码错误",
+	"login.login.error": "手机号或密码错误",
 
 	"register.username": "用户名",
 	"register.username.input": "请输入用户名",
@@ -108,6 +108,11 @@
 	"appointment.loginFail": "登录失败",
 	"appointment.codeSendSuccess": "验证码已发送",
 	"appointment.codeSendFail": "验证码发送失败",
+	"appointment.selectDoctor": "选择专家",
+	"appointment.selectDoctorOption": "请选择专家",
+	"appointment.currentAppointment": "当前预约",
+	"appointment.historyAppointment": "历史预约",
+	"appointment.noHistory": "暂无历史预约",
 
 
 
@@ -130,6 +135,8 @@
 	"user.passwordMedium": "中",
 	"user.passwordStrong": "强",
 	"user.passwordVeryStrong": "非常强",
+	"user.confirmLogout": "确定退出登录吗？",
+	"user.logoutConfirmation": "退出登录",
 
 	"news.featured": "头条",
 	"news.empty": "暂无新闻",
@@ -225,6 +232,10 @@
 	"report.medication.3": "中草药",
 	"report.medication.4": "西药",
 
-	"report.diagnosis": "诊断"
+	"report.diagnosis": "诊断",
+	
+	"pharmacy.stock": "库存",
+	"pharmacy.unit": "件",
+	"pharmacy.empty": "暂无内容"
 
 }

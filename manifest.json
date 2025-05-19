@@ -1,6 +1,6 @@
 {
     "name" : "kangrentang",
-    "appid" : "__UNI__G7583C1C",
+    "appid" : "__UNI__27B7FF3",
     "description" : "",
     "versionName" : "1.0.1",
     "versionCode" : "100",
@@ -90,7 +90,7 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/app-api" : {
-                    "target" : "http://localhost:48080",
+                    "target" : "http://kangrentang.co",
                     "changeOrigin" : true,
                     "pathRewrite" : {
                         "^/app-api" : ""

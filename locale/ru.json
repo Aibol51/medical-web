@@ -49,7 +49,7 @@
 	"login.password.length.error": "Пароль должен быть от 6 до 16 символов",
 	"login.verification.error": "Пожалуйста, введите правильный код подтверждения",
 	"login.login.success": "Вход выполнен успешно",
-	"login.login.error": "Номер телефона, пароль или код подтверждения введены неверно",
+	"login.login.error": "Номер телефона или пароль неверны",
 
 	"register.username": "Имя пользователя",
 	"register.username.input": "Введите имя пользователя",
@@ -108,6 +108,11 @@
 	"appointment.loginFail": "Ошибка входа.",
 	"appointment.codeSendSuccess": "Код подтверждения отправлен.",
 	"appointment.codeSendFail": "Не удалось отправить код подтверждения.",
+	"appointment.selectDoctor": "Выберите врача",
+	"appointment.selectDoctorOption": "Пожалуйста, выберите врача",
+	"appointment.currentAppointment": "Текущая запись",
+	"appointment.historyAppointment": "История записи",
+	"appointment.noHistory": "История пуста",
 
 	"user.logOut": "Выйти",
 	"user.logOutSuccess": "Выход выполнен успешно!", // 登出成功!
@@ -128,6 +133,8 @@
 	"user.passwordMedium": "Средний",
 	"user.passwordStrong": "Сильный",
 	"user.passwordVeryStrong": "Очень сильный",
+	"user.confirmLogout": "Вы уверены, что хотите выйти?",
+	"user.logoutConfirmation": "Выход из аккаунта",
 
 	"news.featured": "Избранное",
 	"news.empty": "Новостей нет",
@@ -225,5 +232,11 @@
 	"report.medication.3": "Китайские травы",
 	"report.medication.4": "Западная медицина",
 
-	"report.diagnosis": "Диагноз"
+	"report.diagnosis": "Диагноз",
+
+
+	"pharmacy.stock": "Осталься",
+	"pharmacy.unit": "шт.",
+	"pharmacy.empty": "Нет данных"
+
 }

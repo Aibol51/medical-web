@@ -123,9 +123,7 @@
 				mobile: '+7' + formData.value.phoneNumber,
 				password: formData.value.password
 			};
-
 			const loginRes = await loginMobile(data);
-			console.log(loginRes)
 			if (loginRes.code === 0) {
 				
 				Cache.set(USER_INFO, loginRes.data);
@@ -141,7 +139,6 @@
 					});
 				}, 1000);
 			} else if (loginRes.code === 1004003000) {
-				getCaptchaApi();
 				uni.showToast({
 					title: t("login.login.error"),
 					icon: "none",

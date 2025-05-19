@@ -49,7 +49,7 @@
 	"login.password.length.error": "The password must be between {minLength} and {maxLength} characters",
 	"login.verification.error": "Please enter the correct verification code",
 	"login.login.success": "Login successful",
-	"login.login.error": "Phone number, password, or verification code is incorrect",
+	"login.login.error": "Phone number or password is incorrect",
 
 	"register.username": "Username",
 	"register.username.input": "Please enter your username",
@@ -107,6 +107,11 @@
 	"appointment.loginFail": "Login failed.",
 	"appointment.codeSendSuccess": "Verification code has been sent.",
 	"appointment.codeSendFail": "Failed to send verification code.",
+	"appointment.selectDoctor": "Select Doctor",
+	"appointment.selectDoctorOption": "Please select a doctor",
+	"appointment.currentAppointment": "Current Appointment",
+	"appointment.historyAppointment": "History Appointment",
+	"appointment.noHistory": "No history",
 
 	"user.logOut": "Log out",
 	"user.logOutSuccess": "Log out successful!", // 登出成功!
@@ -127,6 +132,8 @@
 	"user.passwordMedium": "Medium",
 	"user.passwordStrong": "Strong",
 	"user.passwordVeryStrong": "Very Strong",
+	"user.confirmLogout": "Confirm to log out?",
+	"user.logoutConfirmation": "Log out",
 
 	"news.featured": "Featured",
 	"news.empty": "No news available",
@@ -222,5 +229,9 @@
 	"report.medication.3": "Chinese herbs",
 	"report.medication.4": "Western medicine",
 
-	"report.diagnosis": "Diagnosis"
+	"report.diagnosis": "Diagnosis",
+
+	"pharmacy.stock": "Stock",
+	"pharmacy.unit": "pcs",
+	"pharmacy.empty": "No data"
 }

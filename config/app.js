@@ -5,9 +5,10 @@
 
 
 // let httpApi = 'https://kangrentang.kangyitong.cn'
-let httpApi = 'http://127.0.0.1:48080'
+// let httpApi = 'http://127.0.0.1:48080'
+// let httpApi = 'http://kangrentang.co'
+let httpApi = ''
 let port = '/app-api'
-let wsApi = 'wss://kyhospital.sdwanyue.com:9500/'
 
 
 export const HEADER = {
@@ -16,7 +17,6 @@ export const HEADER = {
 };
 
 export const HTTP_REQUEST_URL = httpApi + port;
-export const VUE_APP_WS_URL = `${wsApi}?`;
 // export const openPlantGrass = openPlantGrass;
 export const TOKENNAME = 'authorization';
 export const EXPIRE = 0;

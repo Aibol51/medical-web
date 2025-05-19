@@ -40,8 +40,8 @@
 					:text="t('appointment.bookNow')" @click="openPopup()"></uv-button>
 			</view>
 		</uv-empty>
-		<uv-empty v-else-if="currentTab === 1" mode="history" textSize="18" text="没有历史预约" width="200" height="200"
-			icon-color="#767676" text-color="#767676">
+		<uv-empty v-else-if="currentTab === 1" mode="history" textSize="18" :text="t('appointment.noHistory')"
+			width="200" height="200" icon-color="#767676" text-color="#767676">
 			<view style="margin-top: 30rpx;">
 			</view>
 		</uv-empty>
@@ -50,7 +50,7 @@
 			:round="20">
 			<view class="popupContent">
 				<uv-form label-position="left" :model="model1" :rules="rules" ref="form" labelPosition="top"
-					labelWidth="250rpx">
+					labelWidth="350rpx">
 					<uv-form-item :label="t('appointment.name')" prop="userInfo.name" border-bottom :required="true">
 						<uv-input v-model="model1.userInfo.name" border="none">
 						</uv-input>
@@ -76,10 +76,16 @@
 						<uv-input v-model="model1.userInfo.idCard" border="none" :maxlength="20" type="number">
 						</uv-input>
 					</uv-form-item> -->
-					<!-- <uv-form-item :label="t('appointment.age')" prop="userInfo.age" border-bottom :required="true">
-						<uv-input v-model="model1.userInfo.age" border="none" :maxlength="3" type="number">
-						</uv-input>
-					</uv-form-item> -->
+					<uv-form-item :label="t('home.doctorList')" prop="userInfo.doctorId" border-bottom :required="true">
+						<!-- 只读输入框，用来显示选中的专家昵称，并触发 picker -->
+						<uv-input v-model="selectedExpertName" readonly border="none"
+							:placeholder="t('appointment.selectDoctorOption')" @click="showExpertPicker" />
+
+						<!-- UV Picker 组件 -->
+						<uv-picker ref="expertPicker" :columns="expertData" keyName="title"
+							:title="t('appointment.selectDoctor')" :confirm-text="t('uni.showModal.confirm')"
+							:cancel-text="t('uni.showModal.cancel')" @confirm="handleConfirm" @cancel="handleCancel" />
+					</uv-form-item>
 					<uv-form-item :label="t('appointment.dateTime')" prop="userInfo.appointmentTime" border-bottom
 						@click="showDataPicker" :required="true">
 						<uv-input v-model="model1.userInfo.appointmentTime" disabled disabled-color="#ffffff"
@@ -202,6 +208,9 @@
 		cancelAppointment
 	} from '@/api/appointment.js'
 	import {
+		expertList
+	} from '@/api/expert.js';
+	import {
 		loginBySms,
 		registerMobile,
 		getSmsCaptcha,
@@ -224,15 +233,25 @@
 	// Tab相关变量
 	const currentTab = ref(0);
 	const subsectionList = [{
-		name: '当前预约'
+		name: t('appointment.currentAppointment')
 	}, {
-		name: '历史预约'
+		name: t('appointment.historyAppointment')
 	}];
+	const expertPicker = ref('')
+	const expertData = ref([]);
 
+	// 控制 Picker 显示/隐藏
+	const showPicker = ref(false)
+
+	// 在输入框中展示的昵称
+	const selectedExpertName = ref('')
 	// Tab切换事件
 	const onTabChange = (index) => {
 		currentTab.value = index;
-		getAppointmentData();
+		if (Cache.has(USER_INFO)) {
+			console.log('用户已登录')
+			getAppointmentData()
+		}
 	};
 
 	// 检测运行环境
@@ -303,7 +322,8 @@
 			age: null,
 			appointmentTime: null,
 			symptoms: '',
-			remarks: ''
+			remarks: '',
+			doctorId: null
 		}
 	})
 	const appointmentList = ref([]);
@@ -498,10 +518,11 @@
 	const createBooking = () => {
 		const data = {
 			patientName: model1.userInfo.name,
-			patientPhone: model1.userInfo.mobile,
+			patientPhone: '+7' + model1.userInfo.mobile,
 			appointmentTime: bookingDate.value,
 			symptom: model1.userInfo.symptoms,
 			userId: userId.value,
+			doctorId: model1.userInfo.doctorId
 		};
 		return createAppointment(data).then(res => {
 			if (res.code === 0) {
@@ -514,7 +535,7 @@
 				if (Cache.has(USER_INFO)) {
 					getAppointmentData();
 				} else {
-					window.location.href = 'https://wa.me/77008011117';
+					// window.location.href = 'https://wa.me/77008011117';
 				}
 			} else {
 				// uni.showToast({
@@ -762,7 +783,7 @@
 
 		// 显示加载状态
 		uni.showLoading({
-			title: t('common.loading')
+			title: t('home.loading')
 		});
 
 		getAppointmentList(data).then(res => {
@@ -812,10 +833,65 @@
 		return `status-${status}`;
 	}
 
+	const getExpertList = async () => {
+		try {
+			const res = await expertList({
+				pageNo: 1,
+				pageSize: 50
+			});
+			if (res.code === 0) {
+				const serverData = res.data?.list || [];
+				const currentLocale = uni.getLocale();
+				const newData = serverData.map(item => ({
+					id: item.id,
+					title: item.nickname,
+				}));
+				// uv-picker需要的columns格式是数组嵌套，将专家数据包装成二维数组
+				expertData.value = [newData];
+			}
+		} catch (error) {
+			console.error(error);
+			status.value = 'error';
+		}
+	};
+	// 将 expertData 映射成 picker 所需的 { value, label } 结构
+	const expertOptions = computed(() =>
+		expertData.value.map(expert => ({
+			value: expert.id,
+			label: expert.nickname
+		}))
+	)
+
+
+	// 打开 picker
+	function showExpertPicker() {
+		expertPicker.value.open()
+		console.log(expertData.value)
+	}
+
+	// 确认选择
+	function handleConfirm(picked) {
+		// picked对象包含indexs、value和values属性
+		console.log(picked)
+		// 获取选中的专家对象
+		const selectedExpert = picked.value[0];
+		// 设置专家ID和名称
+		model1.userInfo.doctorId = selectedExpert.id;
+		selectedExpertName.value = selectedExpert.title;
+		showPicker.value = false;
+		console.log(model1.userInfo)
+	}
+
+	// 取消选择
+	function handleCancel() {
+		showPicker.value = false
+	}
+
 	// onLoad(() => {
 	// 	getAppointmentData()
 	// })
 	onLoad(() => {
+		getExpertList()
 		if (Cache.has(USER_INFO)) {
 			console.log('用户已登录')
 			getAppointmentData()

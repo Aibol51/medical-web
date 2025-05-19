@@ -67,7 +67,7 @@
 						</view>
 						<view class="info-cell">
 							<text class="info-label">{{$t('report.phone')}}</text>
-							<text class="info-value">{{currentRecord.phoneNumber}}</text>
+							<text class="info-value">{{currentRecord.patientPhone}}</text>
 						</view>
 						<view class="info-cell">
 							<text class="info-label">{{$t('report.visitTime')}}</text>

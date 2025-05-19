@@ -109,14 +109,15 @@ function baseRequest(url, method, data, {
 				header,
 				data,
 				success: (res) => {
-					if (res.statusCode === 401) {
+					console.log(res)
+					if (res.statusCode === 401 || res.data.code === 401) {
 						toLogin();
 						return reject({
 							message: '未授权，请重新登录',
 							data: res.data
 						});
 					}
-					if (noVerify || res.data.code === 0) {
+					if (noAuth || res.data.code === 0) {
 						resolve(res.data);
 					} else {
 						reject(res.data);
